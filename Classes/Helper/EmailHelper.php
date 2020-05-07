@@ -148,7 +148,7 @@ class EmailHelper
                     0,
                     20
                 )
-                . '-' . strtolower($templateName) . '.csv';
+                . '-' . strtolower($templateName) . '-' . $variables['event']->getUid(). '.csv';
             GeneralUtility::writeFileToTypo3tempDir($eventCsvFile, $csv->render());
 
             // attach CSV-File
@@ -163,7 +163,7 @@ class EmailHelper
                     0,
                     20
                 )
-                . '-' . strtolower($templateName) . '.html';
+                . '-' . strtolower($templateName) . '-' . $variables['event']->getUid(). '.html';
             GeneralUtility::writeFileToTypo3tempDir($debugFile, $emailTextHTML);
         }
 
