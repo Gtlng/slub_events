@@ -142,7 +142,7 @@ class SubscriberRepository extends \TYPO3\CMS\Extbase\Persistence\Repository
         return $query->execute();
     }
 
-  /**
+    /**
 	 * Find all subscriber older than given days
 	 *
 	 * @param integer $days

@@ -156,6 +156,17 @@ class EmailHelper
                 ->setContentType('text/csv'));
         }
 
+        if (true) {
+            $debugFile = PATH_site . 'typo3temp/tx_slubevents/' .
+                substr(
+                    preg_replace('/[^\w]/', '', strtolower($variables['nameTo'])),
+                    0,
+                    20
+                )
+                . '-' . strtolower($templateName) . '.html';
+            GeneralUtility::writeFileToTypo3tempDir($debugFile, $emailTextHTML);
+        }
+
         $message->send();
 
         return $message->isSent();
